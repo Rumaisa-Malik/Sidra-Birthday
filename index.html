@@ -4,82 +4,64 @@
   <meta charset="UTF-8">
   <title>Happy Birthday Sidra 🎂💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Handwritten font -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Pacifico', cursive; text-align: center; padding: 20px; }
-    h1 { color: #ff5fa2; }
-    h2 { color: #ff85c2; }
-    .hidden { display: none; }
-    button { background: #ff9acb; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 16px; }
-    button:hover { background: #ff7fbf; }
-  </style>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🎂 Happy Birthday Sidra 💗</h1>
-<h2 id="countdown">Loading countdown...</h2>
+  <!-- Background Music -->
+  <audio id="bgMusic" loop muted>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-<button id="surpriseBtn">💝 Open Your Surprise 💝</button>
-<p id="surprise" class="hidden">Sidra 🌷 You are deeply loved 💖✨</p>
+  <h1>🎂 Happy Birthday Sidra 💗</h1>
 
-<p id="secretBtn" style="color:#ff69b4; cursor:pointer;">💌 Tap for a secret</p>
-<p id="hiddenMsg" class="hidden">You are my forever best friend 🧁🎀 Love you always 💕</p>
+  <!-- Countdown -->
+  <h2 id="countdown">Loading countdown...</h2>
 
-<audio id="bgMusic" loop muted>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+  <!-- Birthday Message -->
+  <p class="msg">
+    To my dearest Sidra 🌸<br><br>
+    You are my comfort, my laughter, my safe place, and my forever person 🧸💗<br><br>
+    Thank you for standing by me in every mood and chaos.<br><br>
+    On your birthday, I wish you endless smiles, soft days, and all the love your heart deserves 🎂🎀<br><br>
+    You will always be my favorite human 💕
+  </p>
 
-<video controls width="300">
-  <source src="video.mp4" type="video/mp4">
-</video>
+  <!-- Surprise & Secret -->
+  <button id="surpriseBtn">💝 Open Your Surprise 💝</button>
+  <p id="surprise" class="hidden">Sidra 🌷 You are deeply loved 💖✨</p>
 
-<script>
-  // 🎁 Buttons
-  const surpriseBtn = document.getElementById("surpriseBtn");
-  const secretBtn = document.getElementById("secretBtn");
-  const surprise = document.getElementById("surprise");
-  const hiddenMsg = document.getElementById("hiddenMsg");
+  <p id="secretBtn" class="secret">💌 Tap for a secret</p>
+  <p id="hiddenMsg" class="hidden">You are my forever best friend 🧁🎀 Love you always 💕</p>
 
-  surpriseBtn.addEventListener("click", ()=> surprise.classList.remove("hidden"));
-  secretBtn.addEventListener("click", ()=> hiddenMsg.classList.remove("hidden"));
+  <!-- Gallery -->
+  <h3>Our Cute Memories 📸💗</h3>
+  <div class="gallery">
+    <img src="img1.jpg" alt="Memory 1">
+    <img src="img2.jpg" alt="Memory 2">
+    <img src="img3.jpg" alt="Memory 3">
+    <img src="img4.jpg" alt="Memory 4">
+  </div>
 
-  // ⏳ Countdown to today 23:59:59
-  const countdownEl = document.getElementById("countdown");
-  function updateCountdown() {
-    const now = new Date();
-    const birthday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23,59,59).getTime();
-    const diff = birthday - now.getTime();
-    if(diff <=0){
-      countdownEl.textContent = "🎉 HAPPY BIRTHDAY SIDRA 🎂💖";
-      return;
-    }
-    const h = Math.floor((diff/(1000*60*60))%24);
-    const m = Math.floor((diff/(1000*60))%60);
-    const s = Math.floor((diff/1000)%60);
-    countdownEl.textContent = `⏳ ${h}h ${m}m ${s}s 💗`;
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  <!-- Video -->
+  <h3>🎥 A Little Video for You</h3>
+  <video controls class="video">
+    <source src="video.mp4" type="video/mp4">
+  </video>
 
-  // 🎵 Background music
-  const bgMusic = document.getElementById("bgMusic");
-  const video = document.querySelector("video");
+  <!-- Floating Hearts -->
+  <div class="hearts"></div>
 
-  let volume = 0;
-  bgMusic.volume = 0;
-  bgMusic.play().catch(()=>{ // if autoplay blocked, wait for click
-    document.body.addEventListener("click", ()=> bgMusic.play(), {once:true});
-  });
-  const fadeIn = setInterval(()=>{
-    if(volume<0.5){ volume+=0.01; bgMusic.volume = volume; }
-    else { clearInterval(fadeIn); bgMusic.muted=false; }
-  },100);
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  // Pause music when video plays
-  video.addEventListener("play", ()=> bgMusic.pause());
-  video.addEventListener("pause", ()=> bgMusic.play());
-  video.addEventListener("ended", ()=> bgMusic.play());
-</script>
+  <!-- JS -->
+  <script src="script.js"></script>
 
 </body>
 </html>
