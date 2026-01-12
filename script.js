@@ -1,10 +1,30 @@
 function showSurprise() {
   document.getElementById("surprise").style.display = "block";
 
-  // play music on click
-  const audio = document.querySelector("audio");
-  audio.play().catch(err => console.log("Music autoplay blocked:", err));
-}
+// 🎵 Background Music
+const bgMusic = document.getElementById("bgMusic");
+
+// Try to autoplay when page loads
+window.addEventListener("load", () => {
+  bgMusic.play().catch(() => {
+    // Autoplay might be blocked, so wait for first interaction
+    document.body.addEventListener("click", () => bgMusic.play(), { once: true });
+  });
+});
+
+// Stop music when video plays
+const video = document.querySelector("video");
+video.addEventListener("play", () => {
+  bgMusic.pause();
+});
+
+// Resume music when video pauses or ends
+video.addEventListener("pause", () => {
+  bgMusic.play();
+});
+video.addEventListener("ended", () => {
+  bgMusic.play();
+});
 
 function revealSecret() {
   document.getElementById("hiddenMsg").style.display = "block";
