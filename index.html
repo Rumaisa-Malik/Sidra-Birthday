@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Sidra 🎂💖</title>
+
+  <!-- Mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Handwritten font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🎵 Background Music -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>🎂 Happy Birthday Sidra 💗</h1>
+
+  <!-- ⏳ Countdown -->
+  <h2 id="countdown">Loading countdown...</h2>
+
+  <!-- 💌 Message -->
+  <p class="msg">
+    To my dearest Sidra 🌸<br><br>
+
+    You are not just my best friend — you are my comfort,
+    my laughter, my safe place, and my forever person 🧸💗<br><br>
+
+    Thank you for standing by me in every mood and every chaos.
+    Life feels lighter because you’re in it ✨<br><br>
+
+    On your birthday, I wish you endless smiles,
+    soft days, and all the love your heart deserves 🎂🎀<br><br>
+
+    You will always be my favorite human 💕
+  </p>
+
+  <!-- 💝 Surprise -->
+  <button onclick="showSurprise()">💝 Open Your Surprise 💝</button>
+
+  <p id="surprise" class="hidden">
+    Sidra 🌷  
+    If you ever forget how special you are,
+    remember: you are deeply loved 💖✨
+  </p>
+
+  <!-- 📩 Secret -->
+  <p class="secret" onclick="revealSecret()">💌 Tap for a secret</p>
+  <p id="hiddenMsg" class="hidden">
+    You are my forever best friend 🧁🎀  
+    No distance, no time — always us 💕
+  </p>
+
+  <!-- 📸 Gallery -->
+  <h3>Our Cute Memories 📸💗</h3>
+  <div class="gallery">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+  </div>
+
+  <!-- 🎥 Video -->
+  <h3>🎥 A Little Video for You</h3>
+  <video controls class="video">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🎀 Floating hearts -->
+  <div class="hearts"></div>
+
+  <!-- 🎆 Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- ✨ Sparkle cursor -->
+  <script>
+    document.addEventListener("mousemove", function(e) {
+      const s = document.createElement("div");
+      s.className = "sparkle";
+      s.style.left = e.pageX + "px";
+      s.style.top = e.pageY + "px";
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 800);
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
