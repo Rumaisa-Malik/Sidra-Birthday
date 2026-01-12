@@ -1,5 +1,9 @@
 function showSurprise() {
   document.getElementById("surprise").style.display = "block";
+
+  // play music on click
+  const audio = document.querySelector("audio");
+  audio.play().catch(err => console.log("Music autoplay blocked:", err));
 }
 
 function revealSecret() {
@@ -11,8 +15,14 @@ setInterval(() => {
   confetti({ particleCount: 80, spread: 70 });
 }, 3000);
 
-// ⏳ Countdown (CHANGE DATE)
-const birthday = new Date("2026-01-15T00:00:00").getTime();
+// ⏳ Countdown to today 23:59:59
+const now = new Date();
+const birthday = new Date(
+  now.getFullYear(),
+  now.getMonth(),
+  now.getDate(),
+  23, 59, 59
+).getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
