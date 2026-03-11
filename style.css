@@ -39,14 +39,14 @@ button:hover { background: #ff7fbf; }
 /* UPDATED IMAGE SIZE */
 .gallery img {
   width: 100%;
-  max-width: 480px;   /* allows large images */
+  max-width: 320px;   /* allows large images */
   height: auto;
   border-radius: 20px;
   object-fit: cover;
 }
 
 .video {
-  width: 400px;
+  width: 600px;
   border-radius: 20px;
   margin-top: 10px;
 }
