@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const diff = birthday - now.getTime();
 
     if(diff <= 0){
-      countdownEl.textContent = "🎉 HAPPY BIRTHDAY SIDRA 🎂💖";
+      countdownEl.textContent = "🎉 HAPPY BIRTHDAY Linjan 🎂💖";
       return;
     }
 
