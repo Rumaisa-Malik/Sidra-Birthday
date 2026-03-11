@@ -31,14 +31,16 @@ button:hover { background: #ff7fbf; }
 
 .gallery {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+/* UPDATED IMAGE SIZE */
 .gallery img {
-  width: 140px;
-  height: 140px;
+  width: 100%;
+  max-width: 1080px;   /* allows large images */
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
 }
