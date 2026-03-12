@@ -44,6 +44,16 @@ button:hover { background: #ff7fbf; }
   border-radius: 20px;
   object-fit: cover;
 }
+.gallery figure {
+  text-align: center;
+  margin: 0;
+}
+
+.gallery figcaption {
+  font-size: 14px;
+  color: #ff69b4;
+  margin-top: 6px;
+}
 
 .video {
   width: 400px;
