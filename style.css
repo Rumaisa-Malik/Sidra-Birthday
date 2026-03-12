@@ -37,6 +37,18 @@ button:hover { background: #ff7fbf; }
 }
 
 /* UPDATED IMAGE SIZE */
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery figure {
+  width: 180px;
+  text-align: center;
+  margin: 0;
+}
 .gallery img {
   width: 100%;
   max-width: 280px;   /* allows large images */
@@ -44,15 +56,11 @@ button:hover { background: #ff7fbf; }
   border-radius: 20px;
   object-fit: cover;
 }
-.gallery figure {
-  text-align: center;
-  margin: 0;
-}
 
 .gallery figcaption {
-  font-size: 14px;
-  color: #ff69b4;
   margin-top: 6px;
+  font-size: 13px;
+  color: #ff5fa2;
 }
 
 .video {
